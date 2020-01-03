@@ -1,0 +1,282 @@
+{
+    "variables": [],
+    "info": {
+        "name": "Laravel API",
+        "_postman_id": "41cab490-edf9-4c45-84db-a3af56779f15",
+        "description": "",
+        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.0.0\/collection.json"
+    },
+    "item": [
+        {
+            "name": "Admin management",
+            "description": "",
+            "item": [
+                {
+                    "name": "login an admin",
+                    "request": {
+                        "url": "http:\/\/localhost\/api\/admin\/login",
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"Email\": \"admin@esi.dz\",\n    \"Password\": \"admin\"\n}"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Student management",
+            "description": "",
+            "item": [
+                {
+                    "name": "Store a student",
+                    "request": {
+                        "url": "http:\/\/localhost\/api\/etudiant\/add",
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"Merbouh\",\n    \"lastname\": \"Ismail\",\n    \"UID\": \"17\\\/266\",\n    \"degree\": \"1CS\"\n}"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Destroy a student",
+                    "request": {
+                        "url": "http:\/\/localhost\/api\/etudiant\/destroy",
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "[Insert optional longer description of the API endpoint here.]",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Display a list of students",
+                    "request": {
+                        "url": "http:\/\/localhost\/api\/etudiant\/list",
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Store a student",
+                    "request": {
+                        "url": "http:\/\/localhost\/students",
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"Merbouh\",\n    \"lastname\": \"Ismail\",\n    \"UID\": \"17\\\/266\",\n    \"degree\": \"1CS\"\n}"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Destroy a student",
+                    "request": {
+                        "url": "http:\/\/localhost\/students\/{student}",
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "[Insert optional longer description of the API endpoint here.]",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Teacher management",
+            "description": "",
+            "item": [
+                {
+                    "name": "Store a teacher",
+                    "request": {
+                        "url": "http:\/\/localhost\/api\/teacher\/add",
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"fullname\": \"Mostefai Med.amin\",\n    \"Profession\": \"Introduction \\u00e0 g\\u00e9nie logiciel\",\n    \"UID\": \"Ens43\",\n    \"degree\": \"Docteur\"\n}"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Destroy a teacher",
+                    "request": {
+                        "url": "http:\/\/localhost\/api\/teacher\/destroy",
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "[Insert optional longer description of the API endpoint here.]",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Display a list of teachers",
+                    "request": {
+                        "url": "http:\/\/localhost\/api\/teacher\/list",
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Store a teacher",
+                    "request": {
+                        "url": "http:\/\/localhost\/teachers",
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"fullname\": \"Mostefai Med.amin\",\n    \"Profession\": \"Introduction \\u00e0 g\\u00e9nie logiciel\",\n    \"UID\": \"Ens43\",\n    \"degree\": \"Docteur\"\n}"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Destroy a teacher",
+                    "request": {
+                        "url": "http:\/\/localhost\/teachers\/{teacher}",
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "[Insert optional longer description of the API endpoint here.]",
+                        "response": []
+                    }
+                }
+            ]
+        }
+    ]
+}

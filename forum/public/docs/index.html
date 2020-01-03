@@ -1,0 +1,646 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>API Reference</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/all.js"></script>
+
+
+          <script>
+        $(function() {
+            setupLanguages(["bash","javascript"]);
+        });
+      </script>
+      </head>
+
+  <body class="">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" />
+      </span>
+    </a>
+    <div class="tocify-wrapper">
+        <img src="images/logo.png" />
+                    <div class="lang-selector">
+                                  <a href="#" data-language-name="bash">bash</a>
+                                  <a href="#" data-language-name="javascript">javascript</a>
+                            </div>
+                            <div class="search">
+              <input type="text" class="search" id="input-search" placeholder="Search">
+            </div>
+            <ul class="search-results"></ul>
+              <div id="toc">
+      </div>
+                    <ul class="toc-footer">
+                                  <li><a href='http://github.com/mpociot/documentarian'>Documentation Powered by Documentarian</a></li>
+                            </ul>
+            </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+          <!-- START_INFO -->
+<h1>Info</h1>
+<p>Welcome to the generated API reference.
+<a href="http://localhost/docs/collection.json">Get Postman Collection</a></p>
+<!-- END_INFO -->
+<h1>Admin management</h1>
+<p>APIs for managing admins</p>
+<!-- START_e9aa8e9cecac4d07efa45f1b2d470efb -->
+<h2>login an admin</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "http://localhost/api/admin/login" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"Email":"admin@esi.dz","Password":"admin"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/admin/login"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "Email": "admin@esi.dz",
+    "Password": "admin"
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST api/admin/login</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Email</code></td>
+<td>String</td>
+<td>required</td>
+<td>The email of the admin.</td>
+</tr>
+<tr>
+<td><code>Password</code></td>
+<td>String</td>
+<td>required</td>
+<td>The password of the admin to login.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_e9aa8e9cecac4d07efa45f1b2d470efb -->
+<h1>Student management</h1>
+<p>APIs for managing students</p>
+<!-- START_05869dc0fe651caca22936fcfc4f9c91 -->
+<h2>Store a student</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "http://localhost/api/etudiant/add" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"name":"Merbouh","lastname":"Ismail","UID":"17\/266","degree":"1CS"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/etudiant/add"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "name": "Merbouh",
+    "lastname": "Ismail",
+    "UID": "17\/266",
+    "degree": "1CS"
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST api/etudiant/add</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>String</td>
+<td>required</td>
+<td>The name of the student.</td>
+</tr>
+<tr>
+<td><code>lastname</code></td>
+<td>String</td>
+<td>required</td>
+<td>The lastname of the student.</td>
+</tr>
+<tr>
+<td><code>UID</code></td>
+<td>String</td>
+<td>required</td>
+<td>The Unique identifiant of the student.</td>
+</tr>
+<tr>
+<td><code>degree</code></td>
+<td>String</td>
+<td>required</td>
+<td>The university year of the student.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_05869dc0fe651caca22936fcfc4f9c91 -->
+<!-- START_4a3125d26e7ae599a890233f6ebe0376 -->
+<h2>Destroy a student</h2>
+<p>[Insert optional longer description of the API endpoint here.]</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "http://localhost/api/etudiant/destroy" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/etudiant/destroy"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST api/etudiant/destroy</code></p>
+<!-- END_4a3125d26e7ae599a890233f6ebe0376 -->
+<!-- START_b0819b0c9f19a58c9d188fca18e1021c -->
+<h2>Display a list of students</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://localhost/api/etudiant/list" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/etudiant/list"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "status": "success",
+    "data": [
+        {
+            "id": 1,
+            "name": "kechaoui",
+            "lastname": "ali",
+            "UID": "099",
+            "degree": "2CS"
+        },
+        {
+            "id": 2,
+            "name": "aissa",
+            "lastname": "belk",
+            "UID": "090",
+            "degree": "2CS"
+        },
+        {
+            "id": 6,
+            "name": "hlm",
+            "lastname": "moussa",
+            "UID": "100",
+            "degree": "3CS"
+        }
+    ]
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/etudiant/list</code></p>
+<!-- END_b0819b0c9f19a58c9d188fca18e1021c -->
+<!-- START_802ead62e4a6d2fb15513fe84884efd8 -->
+<h2>Store a student</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "http://localhost/students" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"name":"Merbouh","lastname":"Ismail","UID":"17\/266","degree":"1CS"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/students"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "name": "Merbouh",
+    "lastname": "Ismail",
+    "UID": "17\/266",
+    "degree": "1CS"
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST students</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>String</td>
+<td>required</td>
+<td>The name of the student.</td>
+</tr>
+<tr>
+<td><code>lastname</code></td>
+<td>String</td>
+<td>required</td>
+<td>The lastname of the student.</td>
+</tr>
+<tr>
+<td><code>UID</code></td>
+<td>String</td>
+<td>required</td>
+<td>The Unique identifiant of the student.</td>
+</tr>
+<tr>
+<td><code>degree</code></td>
+<td>String</td>
+<td>required</td>
+<td>The university year of the student.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_802ead62e4a6d2fb15513fe84884efd8 -->
+<!-- START_443b3d91cd0ba9d1e9146ac1d4b551ad -->
+<h2>Destroy a student</h2>
+<p>[Insert optional longer description of the API endpoint here.]</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X DELETE \
+    "http://localhost/students/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/students/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>DELETE students/{student}</code></p>
+<!-- END_443b3d91cd0ba9d1e9146ac1d4b551ad -->
+<h1>Teacher management</h1>
+<p>APIs for managing teachers</p>
+<!-- START_e96ef266c1e8629cf62ff3396e224665 -->
+<h2>Store a teacher</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "http://localhost/api/teacher/add" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"fullname":"Mostefai Med.amin","Profession":"Introduction \u00e0 g\u00e9nie logiciel","UID":"Ens43","degree":"Docteur"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/teacher/add"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "fullname": "Mostefai Med.amin",
+    "Profession": "Introduction \u00e0 g\u00e9nie logiciel",
+    "UID": "Ens43",
+    "degree": "Docteur"
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST api/teacher/add</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>fullname</code></td>
+<td>String</td>
+<td>required</td>
+<td>The fullname of the teacher.</td>
+</tr>
+<tr>
+<td><code>Profession</code></td>
+<td>String</td>
+<td>required</td>
+<td>The Module taught by the teacher.</td>
+</tr>
+<tr>
+<td><code>UID</code></td>
+<td>String</td>
+<td>required</td>
+<td>The Unique identifiant of the teacher.</td>
+</tr>
+<tr>
+<td><code>degree</code></td>
+<td>String</td>
+<td>required</td>
+<td>The grade of the teacher.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_e96ef266c1e8629cf62ff3396e224665 -->
+<!-- START_88742646c18e2960f408a4dc0e9c39e5 -->
+<h2>Destroy a teacher</h2>
+<p>[Insert optional longer description of the API endpoint here.]</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "http://localhost/api/teacher/destroy" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/teacher/destroy"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST api/teacher/destroy</code></p>
+<!-- END_88742646c18e2960f408a4dc0e9c39e5 -->
+<!-- START_2b9230f9c56f2816b7571f61bb69e794 -->
+<h2>Display a list of teachers</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://localhost/api/teacher/list" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/teacher/list"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "status": "success",
+    "data": [
+        {
+            "id": 1,
+            "name": "kechaoui haroun",
+            "lastname": "app mobile",
+            "UID": "Ens32",
+            "degree": "docteur"
+        },
+        {
+            "id": 4,
+            "name": "Sami Benali",
+            "lastname": "Sfd",
+            "UID": "Ens33",
+            "degree": "Professeur"
+        }
+    ]
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/teacher/list</code></p>
+<!-- END_2b9230f9c56f2816b7571f61bb69e794 -->
+<!-- START_ac4ef7df4a547992150f87b8d8019a3a -->
+<h2>Store a teacher</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "http://localhost/teachers" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"fullname":"Mostefai Med.amin","Profession":"Introduction \u00e0 g\u00e9nie logiciel","UID":"Ens43","degree":"Docteur"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/teachers"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "fullname": "Mostefai Med.amin",
+    "Profession": "Introduction \u00e0 g\u00e9nie logiciel",
+    "UID": "Ens43",
+    "degree": "Docteur"
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST teachers</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>fullname</code></td>
+<td>String</td>
+<td>required</td>
+<td>The fullname of the teacher.</td>
+</tr>
+<tr>
+<td><code>Profession</code></td>
+<td>String</td>
+<td>required</td>
+<td>The Module taught by the teacher.</td>
+</tr>
+<tr>
+<td><code>UID</code></td>
+<td>String</td>
+<td>required</td>
+<td>The Unique identifiant of the teacher.</td>
+</tr>
+<tr>
+<td><code>degree</code></td>
+<td>String</td>
+<td>required</td>
+<td>The grade of the teacher.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_ac4ef7df4a547992150f87b8d8019a3a -->
+<!-- START_b7a352c5fdd21f8bc7318b82e1dabd6e -->
+<h2>Destroy a teacher</h2>
+<p>[Insert optional longer description of the API endpoint here.]</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X DELETE \
+    "http://localhost/teachers/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/teachers/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>DELETE teachers/{teacher}</code></p>
+<!-- END_b7a352c5fdd21f8bc7318b82e1dabd6e -->
+      </div>
+      <div class="dark-box">
+                        <div class="lang-selector">
+                                    <a href="#" data-language-name="bash">bash</a>
+                                    <a href="#" data-language-name="javascript">javascript</a>
+                              </div>
+                </div>
+    </div>
+  </body>
+</html>
